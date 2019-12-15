@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/navigation"
+            app:startDestination="@id/registrationFragment">
+    <fragment
+            android:id="@+id/gameStartFragment"
+            android:name="com.example.myapp.GameStartFragment"
+            android:label="GameFragment"
+            tools:layout="@layout/fragment_game_start">
+        <action android:id="@+id/action_gameStartFragment_to_gameOverFragment" app:destination="@id/gameOverFragment"/>
+        <action android:id="@+id/action_gameStartFragment_to_gameWonFragment" app:destination="@id/gameWonFragment"/>
+    </fragment>
+    <fragment android:id="@+id/registrationFragment" android:name="com.example.myapp.RegistrationFragment"
+              android:label="fragment_registration" tools:layout="@layout/fragment_registration">
+        <action android:id="@+id/action_registrationFragment_to_gameStartFragment"
+                app:destination="@id/gameStartFragment"/>
+    </fragment>
+    <fragment android:id="@+id/gameOverFragment" android:name="com.example.myapp.GameOverFragment"
+              android:label="fragment_game_over" tools:layout="@layout/fragment_game_over">
+        <action android:id="@+id/action_gameOverFragment_to_gameStartFragment" app:destination="@id/gameStartFragment"/>
+    </fragment>
+    <fragment android:id="@+id/rulesFragment" android:name="com.example.myapp.RulesFragment"
+              android:label="fragment_rules" tools:layout="@layout/fragment_rules"/>
+    <fragment android:id="@+id/gameWonFragment" android:name="com.example.myapp.GameWonFragment"
+              android:label="fragment_game_won" tools:layout="@layout/fragment_game_won">
+        <action android:id="@+id/action_gameWonFragment_to_gameStartFragment" app:destination="@id/gameStartFragment"/>
+    </fragment>
+
+
+</navigation>
